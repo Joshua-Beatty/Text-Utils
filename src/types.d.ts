@@ -1,0 +1,1 @@
+type Util = (text: string) => {output: string, metaData?: Record<string, string | number>}
