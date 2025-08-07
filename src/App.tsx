@@ -1,10 +1,42 @@
+import { useState } from "react";
 import { Button } from "./components/ui/button";
-
+import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarProvider, SidebarTrigger } from "./components/ui/sidebar";
+import utils from "./utils";
+import useHash from "./hooks/use-hash";
+const defaultUtil = Object.keys(utils)[0]
 function App() {
+  const [hash, setSelected] = useHash()
+  const selected = utils[hash] ? hash : defaultUtil
+  const util = utils[selected]
   return (
-    <main className="flex flex-col items-center justify-center h-screen">
-      <Button>Hello!</Button>
-    </main>
+    <SidebarProvider>
+      <Sidebar collapsible="icon" >
+        <SidebarHeader >Text Utils</SidebarHeader>
+        <SidebarContent>
+          <SidebarGroup>
+            <SidebarGroupLabel>Utilities</SidebarGroupLabel>
+            <SidebarGroupContent>
+              <SidebarMenu>
+                {Object.entries(utils).map((item) => {
+                  const Icon = item[1][1]
+                  return (
+                  <SidebarMenuItem key={item[0]}>
+                    <SidebarMenuButton onClick={()=>setSelected(item[0])}>
+                        {Icon}
+                        <span>{item[0]}</span>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                )})}
+              </SidebarMenu>
+            </SidebarGroupContent>
+          </SidebarGroup>
+        </SidebarContent>
+        <SidebarFooter />
+      </Sidebar>
+      <main>
+        <Button>Hello!</Button>
+      </main>
+    </SidebarProvider>
   );
 }
 
