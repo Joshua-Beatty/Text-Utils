@@ -3,11 +3,13 @@ import { Button } from "./components/ui/button";
 import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarProvider, SidebarTrigger } from "./components/ui/sidebar";
 import utils from "./utils";
 import useHash from "./hooks/use-hash";
+import UtilRenderer from "./UtilRenderer";
 const defaultUtil = Object.keys(utils)[0]
 function App() {
   const [hash, setSelected] = useHash()
   const selected = utils[hash] ? hash : defaultUtil
-  const util = utils[selected]
+  const util = utils[selected][0]
+
   return (
     <SidebarProvider>
       <Sidebar collapsible="icon" >
@@ -33,8 +35,8 @@ function App() {
         </SidebarContent>
         <SidebarFooter />
       </Sidebar>
-      <main>
-        <Button>Hello!</Button>
+      <main className="w-full">
+        <UtilRenderer name={selected} util={util}/>
       </main>
     </SidebarProvider>
   );
