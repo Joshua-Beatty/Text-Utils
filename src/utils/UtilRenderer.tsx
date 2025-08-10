@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Textarea } from "./components/ui/textarea";
-import { Button } from "./components/ui/button";
+import { Textarea } from "../components/ui/textarea";
+import { Button } from "../components/ui/button";
 import { Copy } from "lucide-react";
 import TextTransition, { presets } from "react-text-transition";
 import { useDebounceCallback } from "usehooks-ts";

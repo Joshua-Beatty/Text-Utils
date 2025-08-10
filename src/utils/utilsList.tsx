@@ -1,7 +1,7 @@
 import { Brackets, CopyMinus, FileJson2 } from "lucide-react";
-import removeDuplicates from "./utils/removeDuplicates";
-import jsonlToCsv from "./utils/jsonlToCSV";
-import arrayToCSV from "./utils/jsonArrayToCSV";
+import removeDuplicates from "./functions/removeDuplicates";
+import jsonlToCsv from "./functions/jsonlToCSV";
+import arrayToCSV from "./functions/jsonArrayToCSV";
 
 
 const utils: Record<string, [Util, React.ReactNode]> = {

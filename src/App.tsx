@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Button } from "./components/ui/button";
 import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarProvider, SidebarTrigger } from "./components/ui/sidebar";
-import utils from "./utils";
+import utils from "./utils/utilsList";
 import useHash from "./hooks/use-hash";
-import UtilRenderer from "./UtilRenderer";
+import UtilRenderer from "./utils/UtilRenderer";
 const defaultUtil = Object.keys(utils)[0]
 function App() {
   const [hash, setSelected] = useHash()
