@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 function cleanHash() {
   const h = decodeURIComponent(window.location.hash);
