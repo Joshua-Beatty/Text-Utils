@@ -17,6 +17,20 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Text Utils",
   description: "Utilities to help work with next",
+  icons: {
+    icon: [
+      {
+        media: '(prefers-color-scheme: light)',
+        url: '/icon-light.png',
+        href: '/icon-light.png',
+      },
+      {
+        media: '(prefers-color-scheme: dark)',
+        url: '/icon.png',
+        href: '/icon-dark.png',
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
