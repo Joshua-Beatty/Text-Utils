@@ -1,6 +1,9 @@
 'use client'
 import React from "react";
 function cleanHash() {
+  if(typeof window === "undefined") {
+    return ""
+  }
   const h = decodeURIComponent(window.location.hash);
   if (h.charCodeAt(0) == "#".charCodeAt(0)) {
     return h.slice(1);
