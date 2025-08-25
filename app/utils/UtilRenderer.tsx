@@ -49,7 +49,7 @@ function UtilRenderer({ name, util }: { name: string; util: Util }) {
         </div>
         
         {Object.entries(output.metaData || {}).map((x) => (
-          <h4>{x[0]}: {x[1]}</h4>
+          <h4 key={x[0]}>{x[0]}: {x[1]}</h4>
         ))}
       </div>
     </>
